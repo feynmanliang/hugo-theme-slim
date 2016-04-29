@@ -91,9 +91,17 @@ em {
   text-emphasis-style: circle;
   text-emphasis-position: under; }
 
+@font-face {
+  font-family: "monofur";
+  src: url("http://s3.amazonaws.com/oblitum-fonts/monofur-webfont.eot");
+  src: local("monofur for Powerline"),
+       url("http://s3.amazonaws.com/oblitum-fonts/monofur-webfont.woff") format("woff"),
+       url("http://s3.amazonaws.com/oblitum-fonts/monofur-webfont.ttf") format("truetype"),
+       url("http://s3.amazonaws.com/oblitum-fonts/monofur-webfont.svg") format("svg"); }
+
 code {
-  font-family: 'Source Code Pro', Monaco, Courier, monospace;
-  font-size: 0.85rem;
+  font-family: monofur, 'Source Code Pro', Monaco, Courier, monospace;
+  font-size: 12.3pt;
   color: #aaa;
   background-color: #0a0a0a;
   border: 1px solid #110;
@@ -112,8 +120,8 @@ pre {
   background-color: #060606; }
 
 pre code {
-  font-family: 'Source Code Pro', Menlo, Monaco, Courier, monospace;
-  font-size: 0.7rem;
+  font-family: monofur, 'Source Code Pro', Menlo, Monaco, Courier, monospace;
+  font-size: 10.2pt;
   padding: 0;
   color: inherit;
   background-color: transparent;
@@ -216,7 +224,7 @@ button,
           transition: all 0.2s; }
 
 .nav-list .spacer {
-	text-align: center;
+  text-align: center;
 }
 
 .ci {
