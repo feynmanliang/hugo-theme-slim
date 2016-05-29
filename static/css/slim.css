@@ -383,3 +383,11 @@ button,
   left:0;
   width:100%;
   height:100%; }
+
+.code-container {
+  width: 100%;
+  padding:.5em;
+  border-radius: 3px;
+  border-style: none;
+  margin-bottom: 0.5rem;
+  background-color: #3f3f3f; }
