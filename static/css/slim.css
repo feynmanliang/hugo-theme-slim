@@ -478,3 +478,6 @@ input[type=range]:focus::-ms-fill-lower {
 input[type=range]:focus::-ms-fill-upper {
     background: #ccc; }
 
+#controls > div {
+    display: inline-block;
+    margin-right: 5px; }
