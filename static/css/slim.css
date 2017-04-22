@@ -92,16 +92,32 @@ em {
   text-emphasis-position: under; }
 
 @font-face {
-  font-family: "monofur";
-  src: url("http://s3.amazonaws.com/oblitum-fonts/monofur-webfont.eot");
-  src: local("monofur for Powerline"),
-       url("http://s3.amazonaws.com/oblitum-fonts/monofur-webfont.woff") format("woff"),
-       url("http://s3.amazonaws.com/oblitum-fonts/monofur-webfont.ttf") format("truetype"),
-       url("http://s3.amazonaws.com/oblitum-fonts/monofur-webfont.svg") format("svg"); }
+    font-family: "Monoid";
+    src: local("Monoid Regular"),
+         url("https://s3.amazonaws.com/oblitum-fonts/monoid-regular-xtrasmall-dollar-nocalt.woff2") format("woff2"),
+         url("https://s3.amazonaws.com/oblitum-fonts/monoid-regular-xtrasmall-dollar-nocalt.woff") format("woff");
+    font-weight: normal;
+    font-style: normal; }
+
+@font-face {
+    font-family: "Monoid";
+    src: local("Monoid Bold"),
+         url("https://s3.amazonaws.com/oblitum-fonts/monoid-bold-xtrasmall-dollar-nocalt.woff2") format("woff2"),
+         url("https://s3.amazonaws.com/oblitum-fonts/monoid-bold-xtrasmall-dollar-nocalt.woff") format("woff");
+    font-weight: bold;
+    font-style: normal; }
+
+@font-face {
+    font-family: "Monoid";
+    src: local("Monoid Italic"),
+         url("https://s3.amazonaws.com/oblitum-fonts/monoid-italic-xtrasmall-dollar-nocalt.woff2") format("woff2"),
+         url("https://s3.amazonaws.com/oblitum-fonts/monoid-italic-xtrasmall-dollar-nocalt.woff") format("woff");
+    font-weight: normal;
+    font-style: italic; }
 
 code {
-  font-family: monofur, 'Source Code Pro', Monaco, Courier, monospace;
-  font-size: 12.3pt;
+  font-family: Monoid, 'Source Code Pro', Monaco, Courier, monospace;
+  font-size: 9pt;
   color: #aaa;
   background-color: #0a0a0a;
   border: 1px solid #110;
@@ -112,7 +128,7 @@ pre {
   display: block;
   margin-top: 0;
   margin-bottom: 1rem;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   line-height: 1.4;
   white-space: pre;
   word-break: break-all;
@@ -120,8 +136,8 @@ pre {
   background-color: #060606; }
 
 pre code {
-  font-family: monofur, 'Source Code Pro', Menlo, Monaco, Courier, monospace;
-  font-size: 10.2pt;
+  font-family: Monoid, 'Source Code Pro', Menlo, Monaco, Courier, monospace;
+  font-size: 9pt;
   padding: 0;
   color: inherit;
   background-color: transparent;
