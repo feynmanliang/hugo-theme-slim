@@ -1,0 +1,8 @@
+{{ define "main" }}
+<section class="posts">
+  {{ $paginator := .Paginate .Data.Pages }} {{ range $paginator.Pages }}
+  {{ partial "summary.html" . }}
+  {{ end }}
+  {{ partial "pagination.html" . }}
+</section>
+{{ end }}
