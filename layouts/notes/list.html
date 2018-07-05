@@ -6,10 +6,10 @@
   {{.Content}}
 </article>
 <section class="posts">
-  {{ range .Data.Pages.GroupByParam "course" }}
+  {{ range .Sections }}
   <article>
     <header>
-      <h3>{{ .Key }}</h3>
+      <h3>{{ .Title }}</h3>
     </header>
     <ul>
       {{ range .Pages }}
@@ -21,19 +21,5 @@
     </ul>
   </article>
   {{ end }}
-
-  <article>
-    <header>
-      <h3>Unclassified</h3>
-    </header>
-    <ul>
-      {{ range where .Data.Pages ".Params.course" "==" nil }}
-      <li>
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
-        <div class="meta">{{ .Date.Format "Mon, Jan 2, 2006" }}</div>
-      </li>
-      {{ end }}
-    </ul>
-  </article>
 </section>
 {{ end }}
