@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+
+  <body>
+    <div class="container">
+      {{ partial "header.html" . }}
+
+      {{ block "main" . }}
+      {{ end }}
+
+      {{ partial "footer.html" . }}
+    </div>
+    <script src="{{ .Site.BaseURL }}js/slim.js"></script>
+    <script>renderMathInElement(document.body);</script>
+    {{ with .Site.Params.AnalyticsID }}{{ partial "analytics.html" . }}{{ end }}
+  </body>
+
+</html>
