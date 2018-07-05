@@ -1,7 +1,7 @@
 {{ define "main" }}
 <section class="posts">
   {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }} {{ range $paginator.Pages }}
-  {{ .Render "summary" }}
+  {{ partial "summary.html" . }}
   {{ end }}
 </section>
 <footer>
