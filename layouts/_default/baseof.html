@@ -16,7 +16,7 @@
     </div>
     <script src="{{ .Site.BaseURL }}js/slim.js"></script>
     <script>renderMathInElement(document.body);</script>
-    {{ with .Site.Params.AnalyticsID }}{{ partial "analytics.html" . }}{{ end }}
+    {{ partial "analytics.html" . }}
   </body>
 
 </html>

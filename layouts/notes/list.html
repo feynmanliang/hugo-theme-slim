@@ -8,11 +8,28 @@
   </article>
   <div class="content">
     <div class="posts">
-      {{ $paginator := .Paginate .Data.Pages }} {{ range $paginator.Pages }}
-        {{ .Render "li" }}
+      {{ range .Data.Pages.GroupByParam "course" }}
+      <h3>{{ .Key }}</h3>
+      <ul>
+        {{ range .Pages }}
+        <li>
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+          <div class="meta">{{ .Date.Format "Mon, Jan 2, 2006" }}</div>
+        </li>
+        {{ end }}
+      </ul>
       {{ end }}
+
+      <h3>Unclassified</h3>
+      <ul>
+        {{ range where .Data.Pages ".Params.course" "==" nil }}
+        <li>
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+          <div class="meta">{{ .Date.Format "Mon, Jan 2, 2006" }}</div>
+        </li>
+        {{ end }}
+      </ul>
     </div>
-    {{ partial "pagination.html" . }}
   </div>
 </main>
 {{ end }}
