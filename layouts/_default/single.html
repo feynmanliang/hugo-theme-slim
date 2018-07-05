@@ -15,8 +15,7 @@
   </footer>
 </article>
 
-{{ if .Params.comments }}
-<!--> TODO </!-->
-{{ end }}
+{{ partial "related.html" . }}
+{{ partial "disqus.html" . }}
 
 {{ end }}
