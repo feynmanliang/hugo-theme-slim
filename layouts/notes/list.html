@@ -8,19 +8,21 @@
 
 <section class="posts">
   {{ range .Sections }}
-  <article>
-    <header>
-      <h3>{{ .Title }}</h3>
-    </header>
-    <ul>
-      {{ range .Pages }}
-      <li>
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
-        <div class="meta">{{ .Date.Format "Mon, Jan 2, 2006" }}</div>
-      </li>
-      {{ end }}
-    </ul>
-  </article>
+    {{ if (len .Pages) "!=" 0 }}
+    <article>
+      <header>
+        <h3>{{ .Title }}</h3>
+      </header>
+      <ul>
+        {{ range .Pages }}
+        <li>
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+          &mdash; <span class="meta">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
+        </li>
+        {{ end }}
+      </ul>
+    </article>
+    {{ end }}
   {{ end }}
 </section>
 {{ end }}
