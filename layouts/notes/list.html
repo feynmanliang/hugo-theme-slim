@@ -1,35 +1,39 @@
 {{ define "main" }}
-<main>
+<article>
+  <header>
+    <h1>{{.Title}}</h1>
+  </header>
+  {{.Content}}
+</article>
+<section class="posts">
+  {{ range .Data.Pages.GroupByParam "course" }}
   <article>
     <header>
-      <h1>{{.Title}}</h1>
-    </header>
-    {{.Content}}
-  </article>
-  <div class="content">
-    <div class="posts">
-      {{ range .Data.Pages.GroupByParam "course" }}
       <h3>{{ .Key }}</h3>
-      <ul>
-        {{ range .Pages }}
-        <li>
-          <a href="{{ .Permalink }}">{{ .Title }}</a>
-          <div class="meta">{{ .Date.Format "Mon, Jan 2, 2006" }}</div>
-        </li>
-        {{ end }}
-      </ul>
+    </header>
+    <ul>
+      {{ range .Pages }}
+      <li>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        <div class="meta">{{ .Date.Format "Mon, Jan 2, 2006" }}</div>
+      </li>
       {{ end }}
+    </ul>
+  </article>
+  {{ end }}
 
+  <article>
+    <header>
       <h3>Unclassified</h3>
-      <ul>
-        {{ range where .Data.Pages ".Params.course" "==" nil }}
-        <li>
-          <a href="{{ .Permalink }}">{{ .Title }}</a>
-          <div class="meta">{{ .Date.Format "Mon, Jan 2, 2006" }}</div>
-        </li>
-        {{ end }}
-      </ul>
-    </div>
-  </div>
-</main>
+    </header>
+    <ul>
+      {{ range where .Data.Pages ".Params.course" "==" nil }}
+      <li>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        <div class="meta">{{ .Date.Format "Mon, Jan 2, 2006" }}</div>
+      </li>
+      {{ end }}
+    </ul>
+  </article>
+</section>
 {{ end }}

@@ -1,10 +1,10 @@
 {{ define "main" }}
-<main>
-  <div>
+<article>
+  <header>
     <h1>{{ .Title }}</h1>
-    {{ range .Data.Pages }}
-      {{ .Render "summary"}}
-    {{ end }}
-  </div>
-</main>
+  </header>
+  {{ range .Data.Pages }}
+  {{ .Render "summary"}}
+  {{ end }}
+</div>
 {{ end }}
