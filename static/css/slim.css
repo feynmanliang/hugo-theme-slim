@@ -1,6 +1,3 @@
-html {
-  box-sizing: border-box; }
-
 *,
 *:before,
 *:after {
@@ -57,7 +54,6 @@ h5,
 h6 {
   font-weight: 700;
   line-height: 1.25;
-  margin-bottom: 0.75rem;
   font-family: 'Source Sans Pro', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 
 h1 {
@@ -196,8 +192,7 @@ button,
             transition: all 0.3s; }
 
 .header {
-  position: relative;
-  margin: 3rem auto; }
+  position: relative; }
 
 .site-title {
   font-size: 1.5rem;
@@ -206,11 +201,11 @@ button,
     color: #ccc; }
 
 .nav {
-  position: absolute;
-  top: 0;
-  left: -15px;
-  transform: translateX(-100%);
-  text-align: right; }
+  position: fixed;
+  top: 17px;
+  margin-left: -25px;
+  text-align: left;
+  z-index: 1; }
 
 .nav-btn {
   display: inline-block;
@@ -228,11 +223,12 @@ button,
             transform: rotate(-45deg);
     bottom: 0; }
   .nav-btn.is-on + .nav-list {
-    opacity: 1; }
+    opacity: 0.9; }
 
 .nav-list {
   list-style: none;
-  font-size: 0.8rem;
+  background: #000;
+  font-size: 1rem;
   margin-top: 1rem;
   padding: 0;
   opacity: 0;
@@ -284,8 +280,8 @@ button,
   display: block;
   margin-right: auto;
   margin-left: auto;
-  padding-left: 0;
-  padding-right: 0; }
+  padding-left: 38px;
+  padding-right: 20px; }
   .container:before, .container:after {
     content: '';
     display: table; }
@@ -317,23 +313,25 @@ button,
   position: relative;
   margin-bottom: 2rem; }
 
+.post-title {
+  position: relative; }
+
 .post-title:after {
   content: '';
   display: block;
   border-top: 1px solid #333;
-  width: 100%;
+  width: 108%;
   position: absolute;
-  top: 30px;
-  left: -30px;
+  top: 50%;
+  left: -8%;
   z-index: -1; }
 
 .post-title a {
-  color: #ccc;
   background: #000;
-  line-height: 60px;
+  box-shadow: 10px 0 0 #000, -10px 0 0 #000;
+  color: #ccc;
+  line-height: 30px;
   position: relative;
-  padding: 0 14px;
-  margin-left: -14px;
   -webkit-transition: all 0.3s;
           transition: all 0.3s; }
   .post-title a:after, .post-title a:before {
@@ -363,7 +361,7 @@ button,
 
 .post-date {
   color: #333;
-  font-size: 14px;
+  font-size: 16px;
   margin-top: -25px;
   display:block;
   position: relative; }
@@ -376,7 +374,7 @@ button,
 .post-tags {
   color: #333;
   display: block;
-  font-size: 14px;
+  font-size: 16px;
   position: relative;
   margin-top: -25px;
   margin-left: 125px;

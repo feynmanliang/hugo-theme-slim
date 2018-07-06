@@ -17,8 +17,9 @@
 <meta name="msapplication-TileImage" content="https://feynmanliang.commstile-144x144.png" />
 <meta name="msapplication-notification" content="frequency=30;polling-uri=https://notifications.buildmypinnedsite.com/?feed=https://feynmanliang.com/index.xml&amp;id=1;polling-uri2=https://notifications.buildmypinnedsite.com/?feed=https://feynmanliang.com/index.xml&amp;id=2;polling-uri3=https://notifications.buildmypinnedsite.com/?feed=https://feynmanliang.com/index.xml&amp;id=3;polling-uri4=https://notifications.buildmypinnedsite.com/?feed=https://feynmanliang.com/index.xml&amp;id=4;polling-uri5=https://notifications.buildmypinnedsite.com/?feed=https://feynmanliang.com/index.xml&amp;id=5;cycle=1" />
 
-<!-- CSS -->
-<link rel="stylesheet" href="{{ .Site.BaseURL }}/css/slim.css">
+<!-- In-line CSS -->
+<!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/slim.css"> -->
+<style>{{ readFile "themes/slim/static/css/slim.css" | safeCSS }}</style>
 
 <!-- MathJax -->
 <script type="text/x-mathjax-config">

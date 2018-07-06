@@ -1,6 +1,6 @@
 <header class="header">
   <h1 class="site-title"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
-  <p class="site-tagline">{{ .Site.Params.Subtitle }}</p>
+  {{ with .Site.Params.Subtitle }} <p class="site-tagline">{{ . }}</p> {{ end }}
   <nav class="nav">
     <a class="nav-btn" href="#">
       <span class="ci ci-burger"></span>
