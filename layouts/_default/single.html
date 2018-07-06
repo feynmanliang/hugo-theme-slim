@@ -1,8 +1,8 @@
 {{ define "main" }}
 <article class="posts">
   <header class="post">
-    <h2 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-    <span class="post-date">{{ .Date.Format "Jan 2, 2006 " }}</span>
+    {{ if .Title }} <h2 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2> {{ end }}
+    {{ if not .Date.IsZero }} <span class="post-date">{{ .Date.Format "Jan 2, 2006 " }}</span> {{ end }}
   </header>
   <div class="post-content">
     {{ .Content }}

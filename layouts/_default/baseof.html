@@ -21,8 +21,11 @@
       {{ partial "footer.html" . }}
     </div>
 
+    {{ partial "analytics.html" . }}
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <script src="{{ .Site.BaseURL }}js/slim.js"></script>
+
     <!-- WebFont Loader -->
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
     <script>
@@ -33,8 +36,22 @@
       });
     </script>
 
+    <!-- Register service worker -->
+    <script>
+      if('serviceWorker' in navigator) {
+        navigator.serviceWorker
+          .register('/sw.js', { scope: '/' })
+          .then(function(registration) {
+            console.log('Service Worker Registered');
+          });
 
-    {{ partial "analytics.html" . }}
+        navigator.serviceWorker
+          .ready
+          .then(function(registration) {
+            console.log('Service Worker Ready');
+          });
+      }
+    </script>
   </body>
 
 </html>
