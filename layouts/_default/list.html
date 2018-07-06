@@ -1,4 +1,11 @@
 {{ define "main" }}
+<article>
+  <header>
+    <h1>{{.Title}}</h1>
+  </header>
+  {{.Content}}
+</article>
+
 <section class="posts">
   {{ $paginator := .Paginate .Data.Pages }} {{ range $paginator.Pages }}
   {{ partial "summary.html" . }}

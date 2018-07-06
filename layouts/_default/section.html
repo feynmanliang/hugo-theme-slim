@@ -1,13 +1,22 @@
 {{ define "main" }}
-{{ .Content }}
-<ul class="contents">
-  {{ range .Paginator.Pages }}
-  <li>{{.Title}}
-    <div>
-      {{ partial "summary.html" . }}
-    </div>
-  </li>
-  {{ end }}
-</ul>
-{{ partial "pagination.html" . }}
+<article>
+  <header>
+    <h1>{{.Title}}</h1>
+  </header>
+  {{ .Content }}
+</article>
+<section>
+  <ul class="contents">
+    {{ range .Paginator.Pages }}
+    <li>{{.Title}}
+      <div>
+        {{ partial "summary.html" . }}
+      </div>
+    </li>
+    {{ end }}
+  </ul>
+</section>
+<footer>
+  {{ partial "pagination.html" . }}
+</footer>
 {{ end }}
