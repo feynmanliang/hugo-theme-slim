@@ -1,4 +1,4 @@
-{{ if isset .Site.Params "disqusurlprefix" }}
+{{ if isset .Site.Params "disqusshortname" }}
 <div id="disqus_thread"></div>
 <script>
 var disqus_config = function () {
@@ -7,7 +7,7 @@ var disqus_config = function () {
 };
 (function() { // DON'T EDIT BELOW THIS LINE
 var d = document, s = d.createElement('script');
-s.src = 'https://{{ .Site.Params.DisqusUrlPrefix }}.disqus.com/embed.js';
+s.src = 'https://{{ .Site.Params.disqusShortname }}.disqus.com/embed.js';
 s.setAttribute('data-timestamp', +new Date());
 (d.head || d.body).appendChild(s);
 })();
